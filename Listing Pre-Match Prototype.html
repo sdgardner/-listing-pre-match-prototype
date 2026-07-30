@@ -139,10 +139,6 @@
             <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
               <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                <span>Review and accept one of your <a href="#" onClick="{{ onTabQuotes }}" style="font-weight:700">carrier quotes</a>.</span>
-              </li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
                 <span>Answer <a href="#" onClick="{{ onTabQuestions }}" style="font-weight:700">2 questions</a> from carriers.</span>
               </li>
               <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
@@ -310,188 +306,13 @@
         </div>
         </sc-if>
 
-        <div style="display:flex; align-items:center; justify-content:space-between">
-          <div style="font:400 15px/22px var(--font-sans); color:var(--gray-800)">Showing <strong>{{ quoteCount }}</strong> quotes · sorted by price</div>
-          <button type="button" class="skid-btn skid-btn--tertiary skid-btn--sm">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
-            Sort
-          </button>
+        <div class="skid-card" style="padding:64px 24px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px">
+          <span style="flex-shrink:0; width:56px; height:56px; border-radius:50%; background:var(--gray-100); display:grid; place-items:center; margin-bottom:4px">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gray-500)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
+          </span>
+          <h2 style="font:700 20px/26px var(--font-sans); color:var(--gray-900); margin:0">No quotes yet</h2>
+          <p style="font:400 16px/24px var(--font-sans); color:var(--gray-700); margin:0; max-width:44ch; text-wrap:pretty">Carriers are reviewing your shipment now. Most sectional sofas on this lane get their first quote within a few hours.</p>
         </div>
-
-        <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
-        <div class="skid-card" style="{{ q.cardStyle }}">
-          <div style="display:grid; grid-template-columns:260px minmax(0,1fr) 300px; gap:24px; padding:20px 24px; align-items:center">
-            <div style="display:flex; gap:12px; align-items:center">
-              <span class="skid-avatar skid-avatar--md" style="background:var(--gray-200); color:var(--gray-700); font-weight:700">{{ q.initials }}</span>
-              <div>
-                <div style="display:flex; align-items:center; gap:8px">
-                  <a href="#" style="font:700 16px/22px var(--font-sans)">{{ q.name }}</a>
-                  <sc-if value="{{ q.isNew }}"><span class="skid-badge skid-badge--solid skid-badge--orange skid-badge--sm">New</span></sc-if>
-                </div>
-                <div style="display:flex; align-items:center; gap:6px; margin-top:2px">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--green-700)" stroke="none"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                  <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900); font-variant-numeric:tabular-nums">{{ q.rating }}</span>
-                  <span style="font:400 14px/20px var(--font-sans); color:var(--gray-700); font-variant-numeric:tabular-nums">({{ q.reviews }})</span>
-                </div>
-                <div class="skid-helper" style="margin-top:2px">{{ q.city }}</div>
-              </div>
-            </div>
-            <div>
-              <div class="skid-body-sm" style="margin-bottom:2px">{{ q.service }}</div>
-              <div style="font:700 16px/22px var(--font-sans); color:var(--gray-900)">Pickup {{ q.pickup }}</div>
-              <div style="font:400 14px/20px var(--font-sans); color:var(--gray-700)">Delivery {{ q.delivery }}</div>
-            </div>
-            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px">
-              <div style="display:flex; align-items:baseline; gap:2px">
-                <span style="font:700 20px/24px var(--font-sans); color:var(--gray-900)">$</span>
-                <span style="font:700 32px/34px var(--font-sans); color:var(--gray-900); font-variant-numeric:tabular-nums">{{ q.priceStr }}</span>
-              </div>
-              <sc-if value="{{ q.isAccepted }}" hint-placeholder-val="{{ false }}">
-                <div style="display:flex; align-items:center; gap:8px; font:700 14px/20px var(--font-sans); color:var(--green-700)">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                  Accepted — awaiting booking
-                </div>
-              </sc-if>
-              <sc-if value="{{ q.showActions }}" hint-placeholder-val="{{ true }}">
-                <div style="display:flex; gap:8px">
-                  <button type="button" onClick="{{ q.onDecline }}" class="skid-btn skid-btn--ghost skid-btn--md" style="color:var(--red-800)" style-hover="background:var(--red-50); color:var(--red-900)" style-active="background:var(--red-100)">Decline</button>
-                  <button type="button" onClick="{{ q.onAccept }}" class="skid-btn skid-btn--primary skid-btn--md">Accept</button>
-                </div>
-              </sc-if>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 24px; border-top:1px solid var(--gray-200); background:var(--gray-50)">
-            <div style="display:flex; align-items:center; gap:28px">
-              <div style="display:flex; align-items:center; gap:8px">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-                <div>
-                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.feedback }}</div>
-                  <div class="skid-helper">Feedback score</div>
-                </div>
-              </div>
-              <div style="display:flex; align-items:center; gap:8px">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                <div>
-                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.positive }}%</div>
-                  <div class="skid-helper">Positive feedback</div>
-                </div>
-              </div>
-              <div style="display:flex; align-items:center; gap:8px">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
-                <div>
-                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.cancel }}%</div>
-                  <div class="skid-helper">Cancel rate</div>
-                </div>
-              </div>
-              <div style="display:flex; align-items:center; gap:8px">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                <div>
-                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.questionCount }}</div>
-                  <div class="skid-helper">Questions</div>
-                </div>
-              </div>
-            </div>
-            <button type="button" onClick="{{ q.onToggle }}" style="display:flex; align-items:center; gap:6px; background:transparent; border:0; cursor:pointer; font:700 14px/20px var(--font-sans); color:var(--blue-700)">
-              {{ q.toggleLabel }}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{ q.chevronStyle }}"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-          </div>
-          <sc-if value="{{ q.expanded }}" hint-placeholder-val="{{ false }}">
-          <div style="border-top:1px solid var(--gray-200); padding:20px 24px 24px">
-            <div style="display:flex; gap:32px; border-bottom:1px solid var(--gray-300); margin-bottom:24px">
-              <button type="button" onClick="{{ q.onSubDetails }}" style="{{ q.subDetailsStyle }}">Quote Details</button>
-              <button type="button" onClick="{{ q.onSubQuestions }}" style="{{ q.subQuestionsStyle }}">
-                Quote Questions
-                <sc-if value="{{ q.hasQuestion }}" hint-placeholder-val="{{ true }}"><span class="skid-badge skid-badge--solid skid-badge--blue skid-badge--sm" style="font-variant-numeric:tabular-nums">{{ q.questionCount }}</span></sc-if>
-              </button>
-            </div>
-
-            <sc-if value="{{ q.subDetails }}" hint-placeholder-val="{{ true }}">
-            <div style="display:grid; grid-template-columns:minmax(0,320px) minmax(0,1fr); gap:56px; align-items:start">
-              <div style="display:flex; flex-direction:column; gap:24px">
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Time frame</div>
-                  <div style="display:grid; grid-template-columns:74px minmax(0,1fr); row-gap:4px; font:400 16px/22px var(--font-sans); color:var(--gray-900)">
-                    <span>Pickup:</span><span style="font-weight:700">{{ q.pickupEst }}</span>
-                    <span>Delivery:</span><span style="font-weight:700">{{ q.deliveryEst }}</span>
-                  </div>
-                </div>
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Breakdown</div>
-                  <div style="display:flex; justify-content:space-between; font:400 14px/20px var(--font-sans); color:var(--gray-800); text-transform:uppercase; letter-spacing:.04em; padding:6px 0">
-                    <span>Quote</span><span style="font-weight:700; font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.priceStr }}</span>
-                  </div>
-                  <div style="display:flex; justify-content:space-between; font:400 14px/20px var(--font-sans); color:var(--gray-800); text-transform:uppercase; letter-spacing:.04em; padding:6px 0; border-bottom:1px solid var(--gray-300)">
-                    <span>uShip fee</span><span style="font-weight:700; font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.feeStr }}</span>
-                  </div>
-                  <div style="display:flex; justify-content:space-between; font:700 15px/21px var(--font-sans); color:var(--gray-900); text-transform:uppercase; letter-spacing:.04em; padding:10px 0 0">
-                    <span>Total</span><span style="font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.totalStr }}</span>
-                  </div>
-                </div>
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Additional payment terms</div>
-                  <div style="font:700 16px/22px var(--font-sans)">{{ q.terms }}</div>
-                </div>
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Payment accepted</div>
-                  <div style="font:700 16px/22px var(--font-sans)">{{ q.payment }}</div>
-                </div>
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Vehicle type</div>
-                  <div style="font:700 16px/22px var(--font-sans)">{{ q.vehicle }}</div>
-                </div>
-                <div>
-                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Service type</div>
-                  <div style="font:700 16px/22px var(--font-sans)">{{ q.service }}</div>
-                </div>
-              </div>
-
-              <div>
-                <div style="display:flex; flex-direction:column; gap:2px; font:400 15px/22px var(--font-sans); color:var(--gray-700); margin-bottom:20px">
-                  <span style="font-variant-numeric:tabular-nums">Quote ID: {{ q.quoteId }}</span>
-                  <span style="font-variant-numeric:tabular-nums">Quote placed {{ q.placed }}</span>
-                  <span style="font-variant-numeric:tabular-nums">Quote expires {{ q.expiresFull }}</span>
-                </div>
-                <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Note to shipping customer</div>
-                <p style="font:400 16px/24px var(--font-sans); color:var(--gray-900); margin:0 0 14px; max-width:68ch; text-wrap:pretty">{{ q.note }}</p>
-                <p style="font:400 16px/24px var(--font-sans); color:var(--gray-900); margin:0 0 24px; max-width:68ch; text-wrap:pretty">{{ q.included }}</p>
-                <div style="display:flex; gap:24px; padding-top:20px; border-top:1px solid var(--gray-200); margin-bottom:20px">
-                  <div>
-                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Equipment</div>
-                    <div style="font:700 15px/21px var(--font-sans)">{{ q.equipment }}</div>
-                  </div>
-                  <div>
-                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Transit time</div>
-                    <div style="font:700 15px/21px var(--font-sans)">{{ q.transit }}</div>
-                  </div>
-                </div>
-                <a href="#" class="skid-link-md" style="font-weight:700">{{ q.termsLabel }}</a>
-              </div>
-            </div>
-            </sc-if>
-
-            <sc-if value="{{ q.subQuestions }}" hint-placeholder-val="{{ false }}">
-              <sc-if value="{{ q.hasQuestion }}" hint-placeholder-val="{{ true }}">
-              <div style="display:flex; gap:12px">
-                <span class="skid-avatar skid-avatar--sm" style="background:var(--gray-200); color:var(--gray-700); font-weight:700">{{ q.initials }}</span>
-                <div style="flex:1">
-                  <div style="display:flex; align-items:center; gap:8px">
-                    <span style="font:700 15px/21px var(--font-sans)">{{ q.name }}</span>
-                    <span class="skid-helper">{{ q.questionTime }}</span>
-                  </div>
-                  <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:4px 0 10px; max-width:78ch; text-wrap:pretty">{{ q.question }}</p>
-                  <a href="#" onClick="{{ onTabQuestions }}" class="skid-link-sm" style="font-weight:700; text-transform:uppercase; letter-spacing:.04em">Respond to Question</a>
-                </div>
-              </div>
-              </sc-if>
-              <sc-if value="{{ q.noQuestions }}" hint-placeholder-val="{{ false }}">
-              <div style="padding:16px; border-radius:8px; background:var(--gray-100); font:400 15px/22px var(--font-sans); color:var(--gray-800)">This carrier hasn't asked anything about your shipment yet.</div>
-              </sc-if>
-            </sc-if>
-          </div>
-          </sc-if>
-        </div>
-        </sc-for>
       </div>
       </sc-if>
 
@@ -511,6 +332,11 @@
                 <button type="button" aria-label="Report" style="width:28px; height:28px; border:1px solid var(--gray-300); border-radius:4px; background:var(--gray-0); display:grid; place-items:center; cursor:pointer">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
                 </button>
+              </div>
+              <div style="display:flex; align-items:center; gap:6px; margin-top:2px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--green-700)" stroke="none"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+                <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900); font-variant-numeric:tabular-nums">{{ t.rating }}</span>
+                <span style="font:400 14px/20px var(--font-sans); color:var(--gray-700); font-variant-numeric:tabular-nums">({{ t.reviews }})</span>
               </div>
               <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:8px 0 0; max-width:80ch; text-wrap:pretty">{{ t.body }}</p>
 
@@ -579,35 +405,9 @@
       </div>
       </sc-if>
 
-      <div class="skid-card" style="padding:20px">
-        <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; padding-bottom:12px; border-bottom:1px solid var(--gray-200)">Lowest price breakdown</div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px">
-          <span class="skid-body-sm">Lowest quote</span>
-          <span style="display:flex; align-items:baseline; gap:2px">
-            <span style="font:700 16px/20px var(--font-sans)">$</span>
-            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ lowestQuote }}</span>
-          </span>
-        </div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:10px">
-          <span class="skid-body-sm">uShip fee</span>
-          <span style="display:flex; align-items:baseline; gap:2px">
-            <span style="font:700 16px/20px var(--font-sans)">$</span>
-            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ fee }}</span>
-          </span>
-        </div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px; padding-top:16px; border-top:1px solid var(--gray-300)">
-          <span style="font:700 14px/20px var(--font-sans); text-transform:uppercase; letter-spacing:.06em; color:var(--gray-800)">Total</span>
-          <span style="display:flex; align-items:baseline; gap:2px">
-            <span style="font:700 16px/20px var(--font-sans)">$</span>
-            <span style="font:700 30px/32px var(--font-sans); font-variant-numeric:tabular-nums">{{ total }}</span>
-          </span>
-        </div>
-        <div style="margin-top:16px; text-align:center; display:flex; flex-direction:column; gap:4px">
-          <div class="skid-body-sm">{{ timeLeft }} left on listing</div>
-          <div class="skid-body-sm">Listed Jul. 29, 2026</div>
-          <a href="#" onClick="{{ onTabQuotes }}" class="skid-link-sm" style="font-weight:700; text-transform:uppercase; letter-spacing:.04em">See All Quotes</a>
-          <div class="skid-helper">Final price determined at checkout</div>
-        </div>
+      <div class="skid-card" style="padding:20px; text-align:center; display:flex; flex-direction:column; gap:4px">
+        <div class="skid-body-sm">{{ timeLeft }} left on listing</div>
+        <div class="skid-body-sm">Listed Jul. 29, 2026</div>
       </div>
 
       <div class="skid-card" style="padding:18px 20px">
@@ -803,7 +603,7 @@ const FEE = 110;
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    const start = ALL_QUOTES.length;
+    const start = 0;
     const tabMap = { Summary: 'summary', Quotes: 'quotes', Questions: 'questions' };
     this.state = {
       screen: 'listing',
@@ -822,15 +622,12 @@ class Component extends DCLogic {
       watching: 6,
       toast: null,
       threads: [
-        { id: 't1', author: 'Lone Star Freight Co.', initials: 'LS', role: 'Carrier', time: 'Jul. 29, 4:12pm',
-          body: "Greetings! Is the third-floor landing in Denver wide enough for the chaise at an angle, or should we plan to take the back off? Also, when will the sofa be ready for pickup?",
-          replies: [
-            { author: 'Todd Whitefield', time: 'Jul. 29, 5:40pm', body: "The landing is tight — about 34 inches at the turn. The chaise back comes off with four bolts and I have the hardware, so plan on removing it. Everything is wrapped and ready now, so any day from Aug. 3 works." },
-            { author: 'Lone Star Freight Co.', initials: 'LS', time: 'Jul. 29, 6:02pm', body: "Perfect, thanks. We'll bring a second pad and plan for the bolts. Quote is in." }
-          ], replyOpen: false, replyText: '' },
-        { id: 't2', author: 'Gateway Auto & Freight', initials: 'GA', role: 'Carrier', time: 'Jul. 30, 8:24am',
-          body: "Quick question before I quote — is there a loading dock or driveway at the Austin address, and is anyone available to help guide the truck in? Our consolidated route puts us there mid-morning.",
-          replies: [], replyOpen: false, replyText: '' }
+        { id: 't1', author: 'Gateway Auto & Freight', initials: 'GA', role: 'Carrier', rating: '4.6', reviews: 2041, time: 'Jul. 30, 8:24am',
+          body: "Is the chaise back already removed, or should we plan on taking it off ourselves at pickup?",
+          replies: [], replyOpen: true, replyText: '' },
+        { id: 't2', author: 'Summit Haul', initials: 'SH', role: 'Carrier', rating: '4.8', reviews: 658, time: 'Jul. 30, 10:47am',
+          body: "How tight is the landing on the third-floor walk-up in Denver, and is there anywhere on that floor to stage pieces while we bring the rest up?",
+          replies: [], replyOpen: true, replyText: '' }
       ]
     };
   }
@@ -853,7 +650,6 @@ class Component extends DCLogic {
     const s = this.state;
     const placement = this.props.notifyPlacement || 'Sidebar, below price breakdown';
     const vis = this.visible();
-    const lowest = vis.length ? Math.min.apply(null, vis.map(q => q.price)) : 0;
     const tabBase = 'background:transparent; border:0; cursor:pointer; padding:0 0 14px; display:flex; align-items:center; gap:8px; font:700 16px/22px var(--font-sans); text-transform:uppercase; letter-spacing:.04em;';
     const tabOn = tabBase + ' color:var(--blue-700); box-shadow:inset 0 -3px 0 var(--blue-600);';
     const tabOff = tabBase + ' color:var(--gray-800);';
@@ -896,7 +692,7 @@ class Component extends DCLogic {
 
     const confirmQuote = ALL_QUOTES.filter(q => q.id === s.confirming)[0];
     const threads = s.threads.map(t => ({
-      id: t.id, author: t.author, initials: t.initials, role: t.role, time: t.time, body: t.body,
+      id: t.id, author: t.author, initials: t.initials, role: t.role, rating: t.rating, reviews: t.reviews.toLocaleString(), time: t.time, body: t.body,
       replies: t.replies, replyOpen: t.replyOpen, replyClosed: !t.replyOpen, replyText: t.replyText,
       onOpenReply: () => this.setThread(t.id, { replyOpen: true }),
       onCancelReply: () => this.setThread(t.id, { replyOpen: false, replyText: '' }),
@@ -930,8 +726,6 @@ class Component extends DCLogic {
         { name: 'Armless center', dims: '34 × 38 × 34 in', weight: '55 lbs' },
         { name: 'Loveseat section', dims: '62 × 38 × 34 in', weight: '60 lbs' }
       ],
-      lowestQuote: lowest ? lowest.toLocaleString() : '—',
-      fee: FEE, total: lowest ? (lowest + FEE).toLocaleString() : '—',
       timeLeft: '3 days, 6 hours', watching: s.watching,
 
       detailsOpen: s.detailsOpen,
