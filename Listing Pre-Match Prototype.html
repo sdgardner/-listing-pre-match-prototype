@@ -405,9 +405,33 @@
       </div>
       </sc-if>
 
-      <div class="skid-card" style="padding:20px; text-align:center; display:flex; flex-direction:column; gap:4px">
-        <div class="skid-body-sm">{{ timeLeft }} left on listing</div>
-        <div class="skid-body-sm">Listed Jul. 29, 2026</div>
+      <div class="skid-card" style="padding:20px">
+        <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; padding-bottom:12px; border-bottom:1px solid var(--gray-200)">Lowest price breakdown</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px">
+          <span class="skid-body-sm">Lowest quote</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ lowestQuote }}</span>
+          </span>
+        </div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:10px">
+          <span class="skid-body-sm">uShip fee</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ fee }}</span>
+          </span>
+        </div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px; padding-top:16px; border-top:1px solid var(--gray-300)">
+          <span style="font:700 14px/20px var(--font-sans); text-transform:uppercase; letter-spacing:.06em; color:var(--gray-800)">Total</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 30px/32px var(--font-sans); font-variant-numeric:tabular-nums">{{ total }}</span>
+          </span>
+        </div>
+        <div style="margin-top:16px; text-align:center; display:flex; flex-direction:column; gap:4px">
+          <div class="skid-body-sm">{{ timeLeft }} left on listing</div>
+          <div class="skid-body-sm">Listed Jul. 29, 2026</div>
+        </div>
       </div>
 
       <div class="skid-card" style="padding:18px 20px">
@@ -650,6 +674,7 @@ class Component extends DCLogic {
     const s = this.state;
     const placement = this.props.notifyPlacement || 'Sidebar, below price breakdown';
     const vis = this.visible();
+    const lowest = vis.length ? Math.min.apply(null, vis.map(q => q.price)) : 0;
     const tabBase = 'background:transparent; border:0; cursor:pointer; padding:0 0 14px; display:flex; align-items:center; gap:8px; font:700 16px/22px var(--font-sans); text-transform:uppercase; letter-spacing:.04em;';
     const tabOn = tabBase + ' color:var(--blue-700); box-shadow:inset 0 -3px 0 var(--blue-600);';
     const tabOff = tabBase + ' color:var(--gray-800);';
@@ -726,6 +751,8 @@ class Component extends DCLogic {
         { name: 'Armless center', dims: '34 × 38 × 34 in', weight: '55 lbs' },
         { name: 'Loveseat section', dims: '62 × 38 × 34 in', weight: '60 lbs' }
       ],
+      lowestQuote: lowest ? lowest.toLocaleString() : '—',
+      fee: lowest ? FEE : '—', total: lowest ? (lowest + FEE).toLocaleString() : '—',
       timeLeft: '3 days, 6 hours', watching: s.watching,
 
       detailsOpen: s.detailsOpen,
