@@ -155,9 +155,9 @@
             </div>
             <div style="position:relative; border-radius:8px; overflow:hidden; background:var(--gray-100)">
               <div style="position:relative; height:236px">
-                <sc-if value="{{ photo1 }}" hint-placeholder-val="{{ true }}"><image-slot id="sofa1" shape="rect" placeholder="Drop a sectional sofa photo" src="https://images.unsplash.com/photo-1757862351841-c6f7ac0b0201?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Caroline Badran on Unsplash" credit-href="https://unsplash.com/@___atmos"></image-slot></sc-if>
-                <sc-if value="{{ photo2 }}"><image-slot id="sofa2" shape="rect" placeholder="Drop a second photo" src="https://images.unsplash.com/photo-1759722668253-1767030ad9b2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Costa Live on Unsplash" credit-href="https://unsplash.com/@vendedorescostalive"></image-slot></sc-if>
-                <sc-if value="{{ photo3 }}"><image-slot id="sofa3" shape="rect" placeholder="Drop a third photo" src="https://images.unsplash.com/photo-1565330502541-4937be8552e3?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Adam Winger on Unsplash" credit-href="https://unsplash.com/@awcreativeut"></image-slot></sc-if>
+                <sc-if value="{{ photo1 }}" hint-placeholder-val="{{ true }}"><image-slot id="sofa1" shape="rect" placeholder="Drop a sectional sofa photo" src="photos/sofa1.jpg"></image-slot></sc-if>
+                <sc-if value="{{ photo2 }}"><image-slot id="sofa2" shape="rect" placeholder="Drop a second photo" src="photos/sofa2.jpg"></image-slot></sc-if>
+                <sc-if value="{{ photo3 }}"><image-slot id="sofa3" shape="rect" placeholder="Drop a third photo" src="photos/sofa3.jpg"></image-slot></sc-if>
               </div>
               <button type="button" onClick="{{ onPrevPhoto }}" aria-label="Previous photo" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; border:1px solid var(--gray-300); background:var(--gray-0); display:grid; place-items:center; cursor:pointer; box-shadow:var(--elev-1)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-800)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
@@ -538,26 +538,18 @@
   </sc-if>
 
   <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
-  <footer style="background:rgb(0,31,51); padding:40px">
+  <footer style="background:var(--gray-50); border-top:1px solid var(--gray-200); padding:40px">
     <div style="max-width:1440px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px">
-      <div style="display:flex; gap:32px; align-items:center">
-        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">How It Works</a>
-        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Company</a>
-        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Careers</a>
-        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Press</a>
-        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Blog</a>
-        <a href="#" onClick="{{ onNextTask }}" style="color:var(--gray-0); font:700 18px/22px var(--font-sans); letter-spacing:.04em; text-transform:uppercase; display:flex; align-items:center; gap:8px">
-          {{ nextTaskLabel }}
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
-      </div>
-      <img src="assets/uship-logo-white.svg" alt="uShip" style="width:86px; opacity:.9">
+      <img src="assets/uship-logo-blue.svg" alt="uShip" style="width:86px">
+      <button type="button" onClick="{{ onNextTask }}" style="background:rgb(0,31,51); color:var(--gray-0); border:0; border-radius:4px; padding:14px 22px; font:700 15px/20px var(--font-sans); letter-spacing:.02em; cursor:pointer; display:flex; align-items:center; gap:8px">
+        Continue to next part of the study
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
     </div>
-    <div style="max-width:1440px; margin:24px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.16); display:flex; gap:20px; font:400 13px/18px var(--font-sans); color:rgba(255,255,255,.7)">
+    <div style="max-width:1440px; margin:24px auto 0; padding-top:20px; border-top:1px solid var(--gray-200); display:flex; gap:20px; font:400 13px/18px var(--font-sans); color:var(--gray-700)">
       <span>Copyright © 2026, uShip Inc. and its licensors. All rights reserved.</span>
-      <a href="#" style="color:rgba(255,255,255,.9)">uShip User Agreement</a>
-      <a href="#" style="color:rgba(255,255,255,.9)">Privacy Policy</a>
-      <a href="#" style="color:rgba(255,255,255,.9)">Site Map</a>
+      <a style="color:var(--gray-800); cursor:pointer">uShip User Agreement</a>
+      <a style="color:var(--gray-800); cursor:pointer">Privacy Policy</a>
     </div>
   </footer>
   </sc-if>
@@ -735,7 +727,6 @@ class Component extends DCLogic {
 
     return {
       isListing: s.screen === 'listing', isTaskScreen: s.screen === 'task',
-      nextTaskLabel: s.screen === 'listing' ? 'Next Task' : 'Back to Listing',
       onNextTask: e => { if (e) e.preventDefault(); this.setState(st => ({ screen: st.screen === 'listing' ? 'task' : 'listing' })); window.scrollTo(0, 0); },
       isSummary: s.tab === 'summary', isQuotes: s.tab === 'quotes', isQuestions: s.tab === 'questions',
       tabSummaryStyle: s.tab === 'summary' ? tabOn : tabOff,
