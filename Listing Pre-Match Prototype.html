@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=1440">
+<link rel="stylesheet" href="_ds/skid-uship-design-system-019dd4f3-4fda-725a-b1a6-8ca2f8f4d3c0/tokens.css">
+<link rel="stylesheet" href="_ds/skid-uship-design-system-019dd4f3-4fda-725a-b1a6-8ca2f8f4d3c0/colors_and_type.css">
+<link rel="stylesheet" href="_ds/skid-uship-design-system-019dd4f3-4fda-725a-b1a6-8ca2f8f4d3c0/components.css">
+<link rel="stylesheet" href="_ds/skid-uship-design-system-019dd4f3-4fda-725a-b1a6-8ca2f8f4d3c0/styles.css">
+<script src="_ds/skid-uship-design-system-019dd4f3-4fda-725a-b1a6-8ca2f8f4d3c0/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: var(--gray-50); font-family: var(--font-sans); color: var(--gray-900); }
+  a { color: var(--blue-700); text-decoration: none; }
+  a:hover { color: var(--blue-800); }
+  button { font-family: var(--font-sans); }
+  @keyframes toastIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes rowIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</helmet>
+
+<div style="min-width:1440px; background:var(--gray-50); padding-bottom:0">
+
+  <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
+  <header style="position:sticky; top:0; z-index:40; height:77px; background:var(--gray-0); border-bottom:1px solid var(--gray-300); display:flex; align-items:stretch">
+    <div style="width:132px; background:var(--blue-600); display:grid; place-items:center">
+      <img src="assets/uship-logo-white.svg" alt="uShip" style="width:78px; display:block">
+    </div>
+    <nav style="display:flex; align-items:center; gap:32px; padding:0 32px">
+      <a href="#" style="display:flex; align-items:center; gap:10px; font:700 14px/1 var(--font-sans); letter-spacing:.04em; text-transform:uppercase; color:var(--gray-800)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+        My Shipments
+      </a>
+      <a href="#" style="display:flex; align-items:center; gap:10px; font:700 14px/1 var(--font-sans); letter-spacing:.04em; text-transform:uppercase; color:var(--gray-800)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+        Ship
+      </a>
+    </nav>
+    <div style="flex:1"></div>
+    <div style="display:flex; align-items:center; gap:12px; padding:0 24px">
+      <span class="skid-avatar" style="background:var(--gray-200); color:var(--gray-600)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      </span>
+      <span style="font:700 14px/1 var(--font-sans); letter-spacing:.04em; text-transform:uppercase; color:var(--gray-800)">Todd Whitefield</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+    <a href="#" style="display:grid; place-items:center; width:104px; border-left:1px solid var(--gray-300); font:700 14px/1 var(--font-sans); letter-spacing:.04em; text-transform:uppercase; color:var(--gray-800)">Help</a>
+  </header>
+  </sc-if>
+
+  <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
+  <main style="max-width:1440px; margin:0 auto; padding:32px 40px 80px; display:grid; grid-template-columns:minmax(0,1fr) 320px; gap:24px; align-items:start">
+
+    <div style="min-width:0">
+      <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:20px">
+        <div>
+          <h1 style="font:700 32px/38px var(--font-sans); color:var(--gray-900); margin:0 0 6px">3-piece sectional sofa</h1>
+          <div style="display:flex; align-items:center; gap:10px; font:400 14px/20px var(--font-sans); color:var(--gray-700)">
+            <a href="#" style="font-weight:700">Todd Whitefield</a>
+            <span style="color:var(--gray-400)">|</span>
+            <span style="font-variant-numeric:tabular-nums">ID #9320485303</span>
+            <span class="skid-badge skid-badge--solid skid-badge--green skid-badge--sm">Active</span>
+          </div>
+          <div style="margin-top:8px; display:flex; align-items:center; gap:8px; font:400 14px/20px var(--font-sans); color:var(--gray-700)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.4-7 12-8 12s-8-7.6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Austin, TX 78702 → Denver, CO 80211 · 920 miles
+          </div>
+        </div>
+        <div class="skid-split-btn">
+          <button class="skid-btn skid-btn--secondary skid-btn--md" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4Z"/></svg>
+            Edit Shipment
+          </button>
+          <button class="skid-btn skid-btn--secondary skid-btn--md skid-btn--icon" type="button" aria-label="More actions">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:32px; border-bottom:1px solid var(--gray-300); margin-bottom:24px">
+        <button type="button" onClick="{{ onTabSummary }}" style="{{ tabSummaryStyle }}">Summary</button>
+        <button type="button" onClick="{{ onTabQuotes }}" style="{{ tabQuotesStyle }}">
+          Quotes
+          <span class="skid-badge skid-badge--solid skid-badge--blue skid-badge--sm" style="font-variant-numeric:tabular-nums">{{ quoteCount }}</span>
+        </button>
+        <button type="button" onClick="{{ onTabQuestions }}" style="{{ tabQuestionsStyle }}">
+          Questions
+          <span class="skid-badge skid-badge--solid skid-badge--blue skid-badge--sm" style="font-variant-numeric:tabular-nums">{{ questionCount }}</span>
+        </button>
+      </div>
+
+      <sc-if value="{{ isSummary }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; flex-direction:column; gap:24px">
+
+        <sc-if value="{{ notifyInMain }}" hint-placeholder-val="{{ false }}">
+        <div class="skid-card" style="padding:12px 16px; border-color:var(--blue-200); background:var(--blue-50); display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+          <span style="flex-shrink:0; width:32px; height:32px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </span>
+          <div style="flex:1; min-width:220px">
+            <div style="font:700 15px/21px var(--font-sans); color:var(--gray-900)">Know the second a quote lands</div>
+            <div style="font:400 13px/18px var(--font-sans); color:var(--gray-700)">{{ compactHelper }}</div>
+          </div>
+          <sc-if value="{{ notifySaved }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; align-items:center; gap:8px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">Texts are on for {{ savedPhone }}</span>
+              <a href="#" onClick="{{ onChangeNumber }}" class="skid-link-sm">Change</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; gap:8px; align-items:center">
+              <div style="display:flex; align-items:center; gap:8px; width:200px; height:40px; padding:0 12px; background:var(--gray-0); border:1px solid var(--gray-400); border-radius:6px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <input type="tel" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="(512) 555-1234" style="flex:1; min-width:0; border:0; outline:none; font:400 15px/21px var(--font-sans); color:var(--gray-900); background:transparent">
+              </div>
+              <button type="button" onClick="{{ onNotifySubmit }}" class="skid-btn skid-btn--secondary skid-btn--md">Text Me</button>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <div style="display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:24px; align-items:stretch">
+          <div class="skid-card" style="padding:24px; display:flex; flex-direction:column">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <h2 style="font:700 20px/26px var(--font-sans); color:var(--gray-900); margin:0">Your listing is live</h2>
+            </div>
+            <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:0 0 4px">Carriers are reviewing your shipment now. Your target price is <strong>$1,100</strong>.</p>
+            <p style="font:400 14px/22px var(--font-sans); color:var(--gray-700); margin:0 0 20px; max-width:52ch; text-wrap:pretty">Most sectional sofas on this lane get their first quote within a few hours. You have 24 hours to book once you accept a quote.</p>
+            <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; margin-top:auto">Next steps</div>
+            <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
+              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                <span>Review and accept one of your <a href="#" onClick="{{ onTabQuotes }}" style="font-weight:700">carrier quotes</a>.</span>
+              </li>
+              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                <span>Answer <a href="#" onClick="{{ onTabQuestions }}" style="font-weight:700">2 questions</a> from carriers.</span>
+              </li>
+              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                <span>Add <a href="#" style="font-weight:700">street addresses</a> for pickup and delivery.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skid-card" style="padding:20px; display:flex; flex-direction:column">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:12px">
+              <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em">Photos</div>
+              <a href="#" class="skid-link-sm" style="font-weight:700">View All Photos</a>
+            </div>
+            <div style="position:relative; border-radius:8px; overflow:hidden; background:var(--gray-100)">
+              <div style="position:relative; height:236px">
+                <sc-if value="{{ photo1 }}" hint-placeholder-val="{{ true }}"><image-slot id="sofa1" shape="rect" placeholder="Drop a sectional sofa photo" src="https://images.unsplash.com/photo-1757862351841-c6f7ac0b0201?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Caroline Badran on Unsplash" credit-href="https://unsplash.com/@___atmos"></image-slot></sc-if>
+                <sc-if value="{{ photo2 }}"><image-slot id="sofa2" shape="rect" placeholder="Drop a second photo" src="https://images.unsplash.com/photo-1759722668253-1767030ad9b2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Costa Live on Unsplash" credit-href="https://unsplash.com/@vendedorescostalive"></image-slot></sc-if>
+                <sc-if value="{{ photo3 }}"><image-slot id="sofa3" shape="rect" placeholder="Drop a third photo" src="https://images.unsplash.com/photo-1565330502541-4937be8552e3?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" credit="Photo by Adam Winger on Unsplash" credit-href="https://unsplash.com/@awcreativeut"></image-slot></sc-if>
+              </div>
+              <button type="button" onClick="{{ onPrevPhoto }}" aria-label="Previous photo" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; border:1px solid var(--gray-300); background:var(--gray-0); display:grid; place-items:center; cursor:pointer; box-shadow:var(--elev-1)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-800)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6-6 6 6 6"/></svg>
+              </button>
+              <button type="button" onClick="{{ onNextPhoto }}" aria-label="Next photo" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); width:34px; height:34px; border-radius:50%; border:1px solid var(--gray-300); background:var(--gray-0); display:grid; place-items:center; cursor:pointer; box-shadow:var(--elev-1)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-800)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10 6 6 6-6 6"/></svg>
+              </button>
+              <div style="position:absolute; left:12px; bottom:12px; display:flex; gap:6px">
+                <span style="{{ dot1Style }}"></span>
+                <span style="{{ dot2Style }}"></span>
+                <span style="{{ dot3Style }}"></span>
+              </div>
+            </div>
+            <div style="margin-top:12px; text-align:center">
+              <a href="#" class="skid-link-sm" style="font-weight:700">Add Photos</a>
+              <div class="skid-helper" style="margin-top:4px">PNG, JPG, JPEG, or BMP · 5MB each</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skid-card" style="padding:24px">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px">
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px">
+                <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em">Pickup</div>
+                <a href="#" class="skid-link-sm" style="font-weight:700">Edit Contact Details</a>
+              </div>
+              <div style="font:400 16px/24px var(--font-sans); color:var(--gray-900)">
+                <div style="font-weight:700">Todd Whitefield</div>
+                <div>1457 Chicon Street</div>
+                <div>Austin, TX 78702</div>
+                <div style="color:var(--gray-700)">Ground floor, garage access</div>
+                <div style="margin-top:8px; font-variant-numeric:tabular-nums">(512) 555-0184</div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:14px; font:700 16px/22px var(--font-sans); color:var(--gray-900)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                Aug. 3 – Aug. 5
+              </div>
+            </div>
+            <div>
+              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px">
+                <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em">Delivery</div>
+                <a href="#" class="skid-link-sm" style="font-weight:700">Edit Contact Details</a>
+              </div>
+              <div style="font:400 16px/24px var(--font-sans); color:var(--gray-900)">
+                <div style="font-weight:700">Marla Whitefield</div>
+                <div>2210 W 32nd Avenue</div>
+                <div>Denver, CO 80211</div>
+                <div style="color:var(--gray-700)">Third-floor walk-up, no elevator</div>
+                <div style="margin-top:8px; font-variant-numeric:tabular-nums">(303) 555-2967</div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:14px; font:700 16px/22px var(--font-sans); color:var(--gray-900)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                Aug. 6 – Aug. 9
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skid-card">
+          <button type="button" onClick="{{ onToggleDetails }}" style="width:100%; box-sizing:border-box; display:flex; align-items:center; justify-content:space-between; padding:20px 24px; background:transparent; border:0; cursor:pointer; text-align:left">
+            <span class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; font-size:14px">Shipment details</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gray-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{ detailsChevronStyle }}"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <sc-if value="{{ detailsOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="border-top:1px solid var(--gray-200); padding:24px">
+            <div style="display:grid; grid-template-columns:160px minmax(0,1fr); gap:24px; padding-bottom:20px; border-bottom:1px solid var(--gray-200)">
+              <div class="skid-body-sm">Description</div>
+              <div>
+                <div style="font:700 16px/22px var(--font-sans); margin-bottom:16px">3-piece sectional sofa (chaise, armless center, loveseat)</div>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px">
+                  <div>
+                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px">Category</div>
+                    <div style="font:700 16px/22px var(--font-sans)">Furniture</div>
+                  </div>
+                  <div>
+                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px">Total weight</div>
+                    <div style="font:700 16px/22px var(--font-sans); font-variant-numeric:tabular-nums">210 lbs</div>
+                  </div>
+                  <div>
+                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:4px">Total quantity</div>
+                    <div style="font:700 16px/22px var(--font-sans); font-variant-numeric:tabular-nums">3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:160px minmax(0,1fr); gap:24px; padding:20px 0; border-bottom:1px solid var(--gray-200)">
+              <div class="skid-body-sm">3 items</div>
+              <div style="display:flex; flex-direction:column; gap:16px">
+                <sc-for list="{{ items }}" as="it" hint-placeholder-count="3">
+                  <div style="display:grid; grid-template-columns:minmax(0,1fr) 140px 100px; gap:16px; align-items:center">
+                    <div style="font:700 16px/22px var(--font-sans)">{{ it.name }}</div>
+                    <div style="font:400 15px/22px var(--font-sans); color:var(--gray-800); font-variant-numeric:tabular-nums">{{ it.dims }}</div>
+                    <div style="font:400 15px/22px var(--font-sans); color:var(--gray-800); font-variant-numeric:tabular-nums">{{ it.weight }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:160px minmax(0,1fr); gap:24px; padding-top:20px">
+              <div class="skid-body-sm">Handling</div>
+              <div>
+                <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px">
+                  <span class="skid-tag skid-tag--compact">Blanket wrap</span>
+                  <span class="skid-tag skid-tag--compact">Not crated</span>
+                  <span class="skid-tag skid-tag--compact">Not palletized</span>
+                  <span class="skid-tag skid-tag--compact">Not stackable</span>
+                  <span class="skid-tag skid-tag--compact">Two-person load</span>
+                </div>
+                <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Special instructions</div>
+                <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:0; max-width:70ch; text-wrap:pretty">Pickup is a ground-floor unit with driveway access — a 26-foot box truck fits, anything longer will need to park on Chicon. Delivery is a third-floor walk-up with a tight landing at the top, so please plan for two people. The chaise section has a removable back; I have the hardware.</p>
+              </div>
+            </div>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isQuotes }}">
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <sc-if value="{{ notifyInMain }}" hint-placeholder-val="{{ false }}">
+        <div class="skid-card" style="padding:12px 16px; border-color:var(--blue-200); background:var(--blue-50); display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+          <span style="flex-shrink:0; width:32px; height:32px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </span>
+          <div style="flex:1; min-width:220px">
+            <div style="font:700 15px/21px var(--font-sans); color:var(--gray-900)">Know the second a quote lands</div>
+            <div style="font:400 13px/18px var(--font-sans); color:var(--gray-700)">{{ compactHelper }}</div>
+          </div>
+          <sc-if value="{{ notifySaved }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; align-items:center; gap:8px">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">Texts are on for {{ savedPhone }}</span>
+              <a href="#" onClick="{{ onChangeNumber }}" class="skid-link-sm">Change</a>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; gap:8px; align-items:center">
+              <div style="display:flex; align-items:center; gap:8px; width:200px; height:40px; padding:0 12px; background:var(--gray-0); border:1px solid var(--gray-400); border-radius:6px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <input type="tel" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="(512) 555-1234" style="flex:1; min-width:0; border:0; outline:none; font:400 15px/21px var(--font-sans); color:var(--gray-900); background:transparent">
+              </div>
+              <button type="button" onClick="{{ onNotifySubmit }}" class="skid-btn skid-btn--secondary skid-btn--md">Text Me</button>
+            </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <div style="display:flex; align-items:center; justify-content:space-between">
+          <div style="font:400 15px/22px var(--font-sans); color:var(--gray-800)">Showing <strong>{{ quoteCount }}</strong> quotes · sorted by price</div>
+          <button type="button" class="skid-btn skid-btn--tertiary skid-btn--sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
+            Sort
+          </button>
+        </div>
+
+        <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+        <div class="skid-card" style="{{ q.cardStyle }}">
+          <div style="display:grid; grid-template-columns:260px minmax(0,1fr) 300px; gap:24px; padding:20px 24px; align-items:center">
+            <div style="display:flex; gap:12px; align-items:center">
+              <span class="skid-avatar skid-avatar--md" style="background:var(--gray-200); color:var(--gray-700); font-weight:700">{{ q.initials }}</span>
+              <div>
+                <div style="display:flex; align-items:center; gap:8px">
+                  <a href="#" style="font:700 16px/22px var(--font-sans)">{{ q.name }}</a>
+                  <sc-if value="{{ q.isNew }}"><span class="skid-badge skid-badge--solid skid-badge--orange skid-badge--sm">New</span></sc-if>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px; margin-top:2px">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--green-700)" stroke="none"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+                  <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900); font-variant-numeric:tabular-nums">{{ q.rating }}</span>
+                  <span style="font:400 14px/20px var(--font-sans); color:var(--gray-700); font-variant-numeric:tabular-nums">({{ q.reviews }})</span>
+                </div>
+                <div class="skid-helper" style="margin-top:2px">{{ q.city }}</div>
+              </div>
+            </div>
+            <div>
+              <div class="skid-body-sm" style="margin-bottom:2px">{{ q.service }}</div>
+              <div style="font:700 16px/22px var(--font-sans); color:var(--gray-900)">Pickup {{ q.pickup }}</div>
+              <div style="font:400 14px/20px var(--font-sans); color:var(--gray-700)">Delivery {{ q.delivery }}</div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:10px">
+              <div style="display:flex; align-items:baseline; gap:2px">
+                <span style="font:700 20px/24px var(--font-sans); color:var(--gray-900)">$</span>
+                <span style="font:700 32px/34px var(--font-sans); color:var(--gray-900); font-variant-numeric:tabular-nums">{{ q.priceStr }}</span>
+              </div>
+              <sc-if value="{{ q.isAccepted }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex; align-items:center; gap:8px; font:700 14px/20px var(--font-sans); color:var(--green-700)">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                  Accepted — awaiting booking
+                </div>
+              </sc-if>
+              <sc-if value="{{ q.showActions }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex; gap:8px">
+                  <button type="button" onClick="{{ q.onDecline }}" class="skid-btn skid-btn--ghost skid-btn--md" style="color:var(--red-800)" style-hover="background:var(--red-50); color:var(--red-900)" style-active="background:var(--red-100)">Decline</button>
+                  <button type="button" onClick="{{ q.onAccept }}" class="skid-btn skid-btn--primary skid-btn--md">Accept</button>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 24px; border-top:1px solid var(--gray-200); background:var(--gray-50)">
+            <div style="display:flex; align-items:center; gap:28px">
+              <div style="display:flex; align-items:center; gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+                <div>
+                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.feedback }}</div>
+                  <div class="skid-helper">Feedback score</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <div>
+                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.positive }}%</div>
+                  <div class="skid-helper">Positive feedback</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                <div>
+                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.cancel }}%</div>
+                  <div class="skid-helper">Cancel rate</div>
+                </div>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <div>
+                  <div style="font:700 14px/18px var(--font-sans); font-variant-numeric:tabular-nums">{{ q.questionCount }}</div>
+                  <div class="skid-helper">Questions</div>
+                </div>
+              </div>
+            </div>
+            <button type="button" onClick="{{ q.onToggle }}" style="display:flex; align-items:center; gap:6px; background:transparent; border:0; cursor:pointer; font:700 14px/20px var(--font-sans); color:var(--blue-700)">
+              {{ q.toggleLabel }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="{{ q.chevronStyle }}"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+          </div>
+          <sc-if value="{{ q.expanded }}" hint-placeholder-val="{{ false }}">
+          <div style="border-top:1px solid var(--gray-200); padding:20px 24px 24px">
+            <div style="display:flex; gap:32px; border-bottom:1px solid var(--gray-300); margin-bottom:24px">
+              <button type="button" onClick="{{ q.onSubDetails }}" style="{{ q.subDetailsStyle }}">Quote Details</button>
+              <button type="button" onClick="{{ q.onSubQuestions }}" style="{{ q.subQuestionsStyle }}">
+                Quote Questions
+                <sc-if value="{{ q.hasQuestion }}" hint-placeholder-val="{{ true }}"><span class="skid-badge skid-badge--solid skid-badge--blue skid-badge--sm" style="font-variant-numeric:tabular-nums">{{ q.questionCount }}</span></sc-if>
+              </button>
+            </div>
+
+            <sc-if value="{{ q.subDetails }}" hint-placeholder-val="{{ true }}">
+            <div style="display:grid; grid-template-columns:minmax(0,320px) minmax(0,1fr); gap:56px; align-items:start">
+              <div style="display:flex; flex-direction:column; gap:24px">
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Time frame</div>
+                  <div style="display:grid; grid-template-columns:74px minmax(0,1fr); row-gap:4px; font:400 16px/22px var(--font-sans); color:var(--gray-900)">
+                    <span>Pickup:</span><span style="font-weight:700">{{ q.pickupEst }}</span>
+                    <span>Delivery:</span><span style="font-weight:700">{{ q.deliveryEst }}</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Breakdown</div>
+                  <div style="display:flex; justify-content:space-between; font:400 14px/20px var(--font-sans); color:var(--gray-800); text-transform:uppercase; letter-spacing:.04em; padding:6px 0">
+                    <span>Quote</span><span style="font-weight:700; font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.priceStr }}</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font:400 14px/20px var(--font-sans); color:var(--gray-800); text-transform:uppercase; letter-spacing:.04em; padding:6px 0; border-bottom:1px solid var(--gray-300)">
+                    <span>uShip fee</span><span style="font-weight:700; font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.feeStr }}</span>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; font:700 15px/21px var(--font-sans); color:var(--gray-900); text-transform:uppercase; letter-spacing:.04em; padding:10px 0 0">
+                    <span>Total</span><span style="font-variant-numeric:tabular-nums; text-transform:none"><span>$</span>{{ q.totalStr }}</span>
+                  </div>
+                </div>
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Additional payment terms</div>
+                  <div style="font:700 16px/22px var(--font-sans)">{{ q.terms }}</div>
+                </div>
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Payment accepted</div>
+                  <div style="font:700 16px/22px var(--font-sans)">{{ q.payment }}</div>
+                </div>
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Vehicle type</div>
+                  <div style="font:700 16px/22px var(--font-sans)">{{ q.vehicle }}</div>
+                </div>
+                <div>
+                  <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Service type</div>
+                  <div style="font:700 16px/22px var(--font-sans)">{{ q.service }}</div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display:flex; flex-direction:column; gap:2px; font:400 15px/22px var(--font-sans); color:var(--gray-700); margin-bottom:20px">
+                  <span style="font-variant-numeric:tabular-nums">Quote ID: {{ q.quoteId }}</span>
+                  <span style="font-variant-numeric:tabular-nums">Quote placed {{ q.placed }}</span>
+                  <span style="font-variant-numeric:tabular-nums">Quote expires {{ q.expiresFull }}</span>
+                </div>
+                <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Note to shipping customer</div>
+                <p style="font:400 16px/24px var(--font-sans); color:var(--gray-900); margin:0 0 14px; max-width:68ch; text-wrap:pretty">{{ q.note }}</p>
+                <p style="font:400 16px/24px var(--font-sans); color:var(--gray-900); margin:0 0 24px; max-width:68ch; text-wrap:pretty">{{ q.included }}</p>
+                <div style="display:flex; gap:24px; padding-top:20px; border-top:1px solid var(--gray-200); margin-bottom:20px">
+                  <div>
+                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Equipment</div>
+                    <div style="font:700 15px/21px var(--font-sans)">{{ q.equipment }}</div>
+                  </div>
+                  <div>
+                    <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px">Transit time</div>
+                    <div style="font:700 15px/21px var(--font-sans)">{{ q.transit }}</div>
+                  </div>
+                </div>
+                <a href="#" class="skid-link-md" style="font-weight:700">{{ q.termsLabel }}</a>
+              </div>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ q.subQuestions }}" hint-placeholder-val="{{ false }}">
+              <sc-if value="{{ q.hasQuestion }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex; gap:12px">
+                <span class="skid-avatar skid-avatar--sm" style="background:var(--gray-200); color:var(--gray-700); font-weight:700">{{ q.initials }}</span>
+                <div style="flex:1">
+                  <div style="display:flex; align-items:center; gap:8px">
+                    <span style="font:700 15px/21px var(--font-sans)">{{ q.name }}</span>
+                    <span class="skid-helper">{{ q.questionTime }}</span>
+                  </div>
+                  <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:4px 0 10px; max-width:78ch; text-wrap:pretty">{{ q.question }}</p>
+                  <a href="#" onClick="{{ onTabQuestions }}" class="skid-link-sm" style="font-weight:700; text-transform:uppercase; letter-spacing:.04em">Respond to Question</a>
+                </div>
+              </div>
+              </sc-if>
+              <sc-if value="{{ q.noQuestions }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:16px; border-radius:8px; background:var(--gray-100); font:400 15px/22px var(--font-sans); color:var(--gray-800)">This carrier hasn't asked anything about your shipment yet.</div>
+              </sc-if>
+            </sc-if>
+          </div>
+          </sc-if>
+        </div>
+        </sc-for>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ isQuestions }}">
+      <div class="skid-card" style="padding:8px 24px 24px">
+        <sc-for list="{{ threads }}" as="t" hint-placeholder-count="2">
+        <div style="padding:24px 0; border-bottom:1px solid var(--gray-200)">
+          <div style="display:flex; gap:12px">
+            <span class="skid-avatar skid-avatar--sm" style="background:var(--gray-200); color:var(--gray-700); font-weight:700">{{ t.initials }}</span>
+            <div style="flex:1; min-width:0">
+              <div style="display:flex; align-items:center; justify-content:space-between; gap:12px">
+                <div style="display:flex; align-items:center; gap:10px">
+                  <span style="font:700 16px/22px var(--font-sans)">{{ t.author }}</span>
+                  <span class="skid-badge skid-badge--gray skid-badge--sm">{{ t.role }}</span>
+                  <span class="skid-helper">{{ t.time }}</span>
+                </div>
+                <button type="button" aria-label="Report" style="width:28px; height:28px; border:1px solid var(--gray-300); border-radius:4px; background:var(--gray-0); display:grid; place-items:center; cursor:pointer">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                </button>
+              </div>
+              <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:8px 0 0; max-width:80ch; text-wrap:pretty">{{ t.body }}</p>
+
+              <sc-for list="{{ t.replies }}" as="r" hint-placeholder-count="1">
+                <div style="margin-top:16px; padding-left:16px; border-left:2px solid var(--gray-200)">
+                  <div style="display:flex; align-items:center; gap:10px">
+                    <span style="font:700 15px/21px var(--font-sans)">{{ r.author }}</span>
+                    <span class="skid-helper">{{ r.time }}</span>
+                  </div>
+                  <p style="font:400 15px/23px var(--font-sans); color:var(--gray-800); margin:4px 0 0; max-width:80ch; text-wrap:pretty">{{ r.body }}</p>
+                </div>
+              </sc-for>
+
+              <sc-if value="{{ t.replyOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:16px">
+                  <textarea value="{{ t.replyText }}" onChange="{{ t.onReplyChange }}" placeholder="Write your answer…" class="skid-input skid-textarea" style="width:100%; box-sizing:border-box"></textarea>
+                  <div style="display:flex; gap:8px; margin-top:10px">
+                    <button type="button" onClick="{{ t.onSend }}" class="skid-btn skid-btn--secondary skid-btn--md">Send Reply</button>
+                    <button type="button" onClick="{{ t.onCancelReply }}" class="skid-btn skid-btn--ghost skid-btn--md">Cancel</button>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ t.replyClosed }}" hint-placeholder-val="{{ true }}">
+                <div style="margin-top:12px; text-align:right">
+                  <button type="button" onClick="{{ t.onOpenReply }}" style="background:transparent; border:0; cursor:pointer; font:700 14px/20px var(--font-sans); color:var(--blue-700); text-transform:uppercase; letter-spacing:.04em">Reply</button>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+        </sc-for>
+      </div>
+      </sc-if>
+    </div>
+
+    <aside style="display:flex; flex-direction:column; gap:16px; position:sticky; top:109px">
+
+      <sc-if value="{{ notifyAtTop }}" hint-placeholder-val="{{ false }}">
+      <div class="skid-card" style="padding:20px; border-color:var(--blue-200); background:var(--blue-50)">
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:14px">
+          <span style="flex-shrink:0; width:36px; height:36px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </span>
+          <div>
+            <div style="font:700 16px/22px var(--font-sans); color:var(--gray-900)">Know the second a quote lands</div>
+            <div style="font:400 14px/21px var(--font-sans); color:var(--gray-800); margin-top:2px; text-wrap:pretty">We'll text you when a carrier quotes this shipment — nothing else.</div>
+          </div>
+        </div>
+        <sc-if value="{{ notifySaved }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:8px; background:var(--green-50); border:1px solid var(--green-200)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <div style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">Texts are on for {{ savedPhone }}</div>
+              <a href="#" onClick="{{ onChangeNumber }}" class="skid-link-sm">Use a different number</a>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; gap:8px; height:48px; padding:0 12px; background:var(--gray-0); border:1px solid var(--gray-400); border-radius:6px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <input type="tel" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="(512) 555-1234" style="flex:1; min-width:0; border:0; outline:none; font:400 16px/22px var(--font-sans); color:var(--gray-900); background:transparent">
+          </div>
+          <button type="button" onClick="{{ onNotifySubmit }}" class="skid-btn skid-btn--secondary skid-btn--lg" style="width:100%; margin-top:8px">Text Me</button>
+          <div style="{{ phoneHelperStyle }}">{{ phoneHelper }}</div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <div class="skid-card" style="padding:20px">
+        <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; padding-bottom:12px; border-bottom:1px solid var(--gray-200)">Lowest price breakdown</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px">
+          <span class="skid-body-sm">Lowest quote</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ lowestQuote }}</span>
+          </span>
+        </div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:10px">
+          <span class="skid-body-sm">uShip fee</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 28px/30px var(--font-sans); font-variant-numeric:tabular-nums">{{ fee }}</span>
+          </span>
+        </div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:16px; padding-top:16px; border-top:1px solid var(--gray-300)">
+          <span style="font:700 14px/20px var(--font-sans); text-transform:uppercase; letter-spacing:.06em; color:var(--gray-800)">Total</span>
+          <span style="display:flex; align-items:baseline; gap:2px">
+            <span style="font:700 16px/20px var(--font-sans)">$</span>
+            <span style="font:700 30px/32px var(--font-sans); font-variant-numeric:tabular-nums">{{ total }}</span>
+          </span>
+        </div>
+        <div style="margin-top:16px; text-align:center; display:flex; flex-direction:column; gap:4px">
+          <div class="skid-body-sm">{{ timeLeft }} left on listing</div>
+          <div class="skid-body-sm">Listed Jul. 29, 2026</div>
+          <a href="#" onClick="{{ onTabQuotes }}" class="skid-link-sm" style="font-weight:700; text-transform:uppercase; letter-spacing:.04em">See All Quotes</a>
+          <div class="skid-helper">Final price determined at checkout</div>
+        </div>
+      </div>
+
+      <div class="skid-card" style="padding:18px 20px">
+        <div style="display:grid; grid-template-columns:1fr 1px 1fr; gap:16px; align-items:center; text-align:center">
+          <div>
+            <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px">Watching</div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:8px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+              <span style="font:700 22px/24px var(--font-sans); font-variant-numeric:tabular-nums">{{ watching }}</span>
+            </div>
+          </div>
+          <div style="background:var(--gray-200); height:44px"></div>
+          <div>
+            <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px">Quotes</div>
+            <div style="display:flex; align-items:center; justify-content:center; gap:8px">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+              <span style="font:700 22px/24px var(--font-sans); font-variant-numeric:tabular-nums">{{ quoteCount }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <sc-if value="{{ notifyBelowPrice }}" hint-placeholder-val="{{ true }}">
+      <div class="skid-card" style="padding:20px; border-color:var(--blue-200); background:var(--blue-50)">
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-bottom:14px">
+          <span style="flex-shrink:0; width:36px; height:36px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+          </span>
+          <div>
+            <div style="font:700 16px/22px var(--font-sans); color:var(--gray-900)">Know the second a quote lands</div>
+            <div style="font:400 14px/21px var(--font-sans); color:var(--gray-800); margin-top:2px; text-wrap:pretty">We'll text you when a carrier quotes this shipment — nothing else.</div>
+          </div>
+        </div>
+        <sc-if value="{{ notifySaved }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:flex-start; gap:10px; padding:12px; border-radius:8px; background:var(--green-50); border:1px solid var(--green-200)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <div>
+              <div style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">Texts are on for {{ savedPhone }}</div>
+              <a href="#" onClick="{{ onChangeNumber }}" class="skid-link-sm">Use a different number</a>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; align-items:center; gap:8px; height:48px; padding:0 12px; background:var(--gray-0); border:1px solid var(--gray-400); border-radius:6px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <input type="tel" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="(512) 555-1234" style="flex:1; min-width:0; border:0; outline:none; font:400 16px/22px var(--font-sans); color:var(--gray-900); background:transparent">
+          </div>
+          <button type="button" onClick="{{ onNotifySubmit }}" class="skid-btn skid-btn--secondary skid-btn--lg" style="width:100%; margin-top:8px">Text Me</button>
+          <div style="{{ phoneHelperStyle }}">{{ phoneHelper }}</div>
+        </sc-if>
+      </div>
+      </sc-if>
+
+      <div class="skid-card" style="padding:20px">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding-bottom:12px; border-bottom:1px solid var(--gray-200)">
+          <span style="width:36px; height:36px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+          </span>
+          <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em">Payment how-to</div>
+        </div>
+        <ol style="margin:14px 0 0; padding:0 0 0 18px; display:flex; flex-direction:column; gap:12px">
+          <li style="font:400 14px/21px var(--font-sans); color:var(--gray-800)">Enter your payment info when you book.</li>
+          <li style="font:400 14px/21px var(--font-sans); color:var(--gray-800)">Once you've prepaid in full, you'll get a payment code.</li>
+          <li style="font:400 14px/21px var(--font-sans); color:var(--gray-800)">Give the code to your carrier at delivery.</li>
+        </ol>
+        <div style="margin-top:14px; text-align:center">
+          <a href="#" class="skid-link-sm" style="font-weight:700; text-transform:uppercase; letter-spacing:.04em">Learn More</a>
+        </div>
+      </div>
+    </aside>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isTaskScreen }}" hint-placeholder-val="{{ false }}">
+  <main style="max-width:1440px; margin:0 auto; padding:160px 40px; display:flex; justify-content:center">
+    <div style="width:760px">
+      <div class="skid-card" style="padding:12px 16px; border-color:var(--blue-200); background:var(--blue-50); display:flex; align-items:center; gap:16px; flex-wrap:wrap">
+        <span style="flex-shrink:0; width:32px; height:32px; border-radius:50%; background:var(--blue-100); display:grid; place-items:center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-700)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+        </span>
+        <div style="flex:1; min-width:220px">
+          <div style="font:700 15px/21px var(--font-sans); color:var(--gray-900)">Know the second a quote lands</div>
+          <div style="font:400 13px/18px var(--font-sans); color:var(--gray-700)">{{ compactHelper }}</div>
+        </div>
+        <sc-if value="{{ notifySaved }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex; align-items:center; gap:8px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">Texts are on for {{ savedPhone }}</span>
+            <a href="#" onClick="{{ onChangeNumber }}" class="skid-link-sm">Change</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notifyOpen }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; gap:8px; align-items:center">
+            <div style="display:flex; align-items:center; gap:8px; width:200px; height:40px; padding:0 12px; background:var(--gray-0); border:1px solid var(--gray-400); border-radius:6px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gray-600)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <input type="tel" value="{{ phone }}" onChange="{{ onPhoneChange }}" placeholder="(512) 555-1234" style="flex:1; min-width:0; border:0; outline:none; font:400 15px/21px var(--font-sans); color:var(--gray-900); background:transparent">
+            </div>
+            <button type="button" onClick="{{ onNotifySubmit }}" class="skid-btn skid-btn--secondary skid-btn--md">Text Me</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isListing }}" hint-placeholder-val="{{ true }}">
+  <footer style="background:rgb(0,31,51); padding:40px">
+    <div style="max-width:1440px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px">
+      <div style="display:flex; gap:32px; align-items:center">
+        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">How It Works</a>
+        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Company</a>
+        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Careers</a>
+        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Press</a>
+        <a href="#" style="color:var(--gray-0); font:700 13px/18px var(--font-sans); letter-spacing:.04em; text-transform:uppercase">Blog</a>
+        <a href="#" onClick="{{ onNextTask }}" style="color:var(--gray-0); font:700 18px/22px var(--font-sans); letter-spacing:.04em; text-transform:uppercase; display:flex; align-items:center; gap:8px">
+          {{ nextTaskLabel }}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <img src="assets/uship-logo-white.svg" alt="uShip" style="width:86px; opacity:.9">
+    </div>
+    <div style="max-width:1440px; margin:24px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.16); display:flex; gap:20px; font:400 13px/18px var(--font-sans); color:rgba(255,255,255,.7)">
+      <span>Copyright © 2026, uShip Inc. and its licensors. All rights reserved.</span>
+      <a href="#" style="color:rgba(255,255,255,.9)">uShip User Agreement</a>
+      <a href="#" style="color:rgba(255,255,255,.9)">Privacy Policy</a>
+      <a href="#" style="color:rgba(255,255,255,.9)">Site Map</a>
+    </div>
+  </footer>
+  </sc-if>
+
+  <sc-if value="{{ toastOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; bottom:24px; left:40px; z-index:60; width:352px; background:var(--gray-0); border:1px solid var(--gray-300); border-left:4px solid var(--green-700); border-radius:8px; box-shadow:0 4px 4px rgba(0,0,0,.25); padding:14px 16px; animation:toastIn 240ms cubic-bezier(0.2,0,0,1)">
+    <div style="display:flex; gap:10px; align-items:flex-start">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <div style="flex:1">
+        <div style="font:700 14px/20px var(--font-sans); color:var(--gray-900)">{{ toastTitle }}</div>
+        <div style="font:400 14px/20px var(--font-sans); color:var(--gray-700); margin-top:2px">{{ toastBody }}</div>
+        <button type="button" onClick="{{ onToastAction }}" style="margin-top:8px; background:transparent; border:0; padding:0; cursor:pointer; font:700 14px/20px var(--font-sans); color:var(--blue-700)">View Quote</button>
+      </div>
+      <button type="button" onClick="{{ onToastClose }}" aria-label="Dismiss" style="background:transparent; border:0; cursor:pointer; color:var(--gray-600)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ confirmOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed; inset:0; z-index:70; background:rgba(0,31,51,.32); display:grid; place-items:center">
+    <div style="width:460px; background:var(--gray-0); border-radius:8px; box-shadow:0 4px 4px rgba(0,0,0,.25); padding:24px">
+      <h3 style="font:700 22px/28px var(--font-sans); margin:0 0 8px">Accept this quote?</h3>
+      <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:0 0 20px; text-wrap:pretty">{{ confirmBody }}</p>
+      <div style="display:flex; gap:8px; justify-content:flex-end">
+        <button type="button" onClick="{{ onCancelConfirm }}" class="skid-btn skid-btn--ghost skid-btn--md">Cancel</button>
+        <button type="button" onClick="{{ onConfirmAccept }}" class="skid-btn skid-btn--primary skid-btn--md">Accept Quote</button>
+      </div>
+    </div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;notifyPlacement&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Sidebar, top&quot;,&quot;Sidebar, below price breakdown&quot;,&quot;Main column, under the live banner&quot;],&quot;default&quot;:&quot;Main column, under the live banner&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Notification card&quot;},&quot;startTab&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Summary&quot;,&quot;Quotes&quot;,&quot;Questions&quot;],&quot;default&quot;:&quot;Summary&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Session setup&quot;}}">
+const ALL_QUOTES = [
+  { id: 'q1', name: 'Lone Star Freight Co.', initials: 'LS', city: 'San Marcos, TX', rating: '4.9', reviews: 1284,
+    service: 'Blanket wrap · Dedicated', price: 1240, pickup: 'Aug. 3 – Aug. 4', delivery: 'Aug. 6 – Aug. 7',
+    feedback: 1284, positive: 98, cancel: 2, equipment: '26-ft box truck, liftgate', transit: '2 – 3 days', expires: 'Aug. 2, 6pm CT', quoteId: '4820193', placed: 'Jul. 29, 2026, 3:48pm CT', expiresFull: 'Aug. 2, 2026, 6pm CT', pickupEst: 'Estimated before Aug. 4', deliveryEst: 'Estimated after Aug. 6', terms: 'Half at pickup, half at delivery', payment: 'uShip payments, credit card', vehicle: '26-ft box truck with liftgate',
+    included: 'Blanket wrap on all three pieces, two-person load and unload, third-floor carry at delivery, and reassembly of the chaise back.',
+    note: "We run Austin to Denver every week and have room on Sunday's load. Happy to disassemble the chaise if you'd rather we handle the hardware.",
+    question: 'Is the third-floor landing wide enough for the chaise at an angle, or should we plan to take the back off?', questionTime: 'Jul. 29, 4:12pm' },
+  { id: 'q2', name: 'Redline Transport LLC', initials: 'RT', city: 'Round Rock, TX', rating: '4.7', reviews: 412,
+    service: 'Blanket wrap · Consolidated', price: 1095, pickup: 'Aug. 4 – Aug. 5', delivery: 'Aug. 8 – Aug. 9',
+    feedback: 412, positive: 96, cancel: 4, equipment: '53-ft trailer, shared load', transit: '3 – 4 days', expires: 'Aug. 2, 9pm CT', quoteId: '4820257', placed: 'Jul. 29, 2026, 7:15pm CT', expiresFull: 'Aug. 2, 2026, 9pm CT', pickupEst: 'Estimated before Aug. 5', deliveryEst: 'Estimated after Aug. 8', terms: 'Due in full at pickup', payment: 'uShip payments', vehicle: '53-ft dry van',
+    included: 'Blanket wrap, curbside pickup and delivery. Stair carry available for $75 per flight, added at booking.',
+    note: 'Consolidated run, so the window is a little wider. Price holds as long as the load stays under 220 lbs.' },
+  { id: 'q3', name: 'Hill Country Moving', initials: 'HC', city: 'Austin, TX', rating: '5.0', reviews: 96,
+    service: 'White glove · Full service', price: 1380, pickup: 'Aug. 3 – Aug. 3', delivery: 'Aug. 6 – Aug. 6',
+    feedback: 96, positive: 100, cancel: 0, equipment: '20-ft straight truck, 2 movers', transit: '2 days', expires: 'Aug. 1, 5pm CT', quoteId: '4820302', placed: 'Jul. 30, 2026, 7:02am CT', expiresFull: 'Aug. 1, 2026, 5pm CT', pickupEst: 'Estimated Aug. 3', deliveryEst: 'Estimated Aug. 6', terms: 'Deposit at booking, balance at delivery', payment: 'uShip payments, credit card, check', vehicle: '20-ft straight truck',
+    included: 'Full pad wrap and shrink, disassembly and reassembly, two movers at both ends, stairs included, and debris removal.',
+    note: 'Small local outfit, same two guys on both ends. We can do same-day pickup if you need it sooner.' },
+  { id: 'q4', name: 'Gateway Auto & Freight', initials: 'GA', city: 'Dallas, TX', rating: '4.6', reviews: 2041,
+    service: 'Blanket wrap · Consolidated', price: 985, pickup: 'Aug. 5 – Aug. 7', delivery: 'Aug. 10 – Aug. 12',
+    feedback: 2041, positive: 94, cancel: 6, equipment: '53-ft trailer, shared load', transit: '4 – 5 days', expires: 'Aug. 3, 8pm CT', quoteId: '4820418', placed: 'Jul. 30, 2026, 9:31am CT', expiresFull: 'Aug. 3, 2026, 8pm CT', pickupEst: 'Estimated before Aug. 7', deliveryEst: 'Estimated after Aug. 10', terms: 'Due in full at delivery', payment: 'uShip payments, credit card', vehicle: '53-ft dry van',
+    included: 'Blanket wrap and curbside service on both ends. Third-floor carry is not included on consolidated loads.',
+    note: 'Lowest price on the board, but the window is wider because we consolidate through Amarillo.' },
+  { id: 'q5', name: 'Summit Haul', initials: 'SH', city: 'Denver, CO', rating: '4.8', reviews: 658,
+    service: 'Blanket wrap · Dedicated', price: 1150, pickup: 'Aug. 4 – Aug. 5', delivery: 'Aug. 7 – Aug. 8',
+    feedback: 658, positive: 97, cancel: 3, equipment: '24-ft box truck, liftgate', transit: '2 – 3 days', expires: 'Aug. 3, 7pm MT', quoteId: '4820506', placed: 'Jul. 30, 2026, 10:12am MT', expiresFull: 'Aug. 3, 2026, 7pm MT', pickupEst: 'Estimated before Aug. 5', deliveryEst: 'Estimated after Aug. 7', terms: 'Half at pickup, half at delivery', payment: 'uShip payments, credit card', vehicle: '24-ft box truck with liftgate',
+    included: 'Blanket wrap, two-person load and unload, and stair carry at delivery. Denver-based, so we know the Highlands walk-ups.',
+    note: "We're heading back to Denver empty on Tuesday, so this is a backhaul rate. It won't be there long." }
+];
+
+const FEE = 110;
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const start = ALL_QUOTES.length;
+    const tabMap = { Summary: 'summary', Quotes: 'quotes', Questions: 'questions' };
+    this.state = {
+      screen: 'listing',
+      tab: tabMap[props.startTab] || 'summary',
+      shown: start,
+      expanded: {},
+      subTab: {},
+      declined: {},
+      accepted: null,
+      confirming: null,
+      detailsOpen: true,
+      photo: 0,
+      phone: '',
+      phoneError: '',
+      savedPhone: '',
+      watching: 6,
+      toast: null,
+      threads: [
+        { id: 't1', author: 'Lone Star Freight Co.', initials: 'LS', role: 'Carrier', time: 'Jul. 29, 4:12pm',
+          body: "Greetings! Is the third-floor landing in Denver wide enough for the chaise at an angle, or should we plan to take the back off? Also, when will the sofa be ready for pickup?",
+          replies: [
+            { author: 'Todd Whitefield', time: 'Jul. 29, 5:40pm', body: "The landing is tight — about 34 inches at the turn. The chaise back comes off with four bolts and I have the hardware, so plan on removing it. Everything is wrapped and ready now, so any day from Aug. 3 works." },
+            { author: 'Lone Star Freight Co.', initials: 'LS', time: 'Jul. 29, 6:02pm', body: "Perfect, thanks. We'll bring a second pad and plan for the bolts. Quote is in." }
+          ], replyOpen: false, replyText: '' },
+        { id: 't2', author: 'Gateway Auto & Freight', initials: 'GA', role: 'Carrier', time: 'Jul. 30, 8:24am',
+          body: "Quick question before I quote — is there a loading dock or driveway at the Austin address, and is anyone available to help guide the truck in? Our consolidated route puts us there mid-morning.",
+          replies: [], replyOpen: false, replyText: '' }
+      ]
+    };
+  }
+
+  visible() {
+    return ALL_QUOTES.slice(0, this.state.shown)
+      .filter(q => !this.state.declined[q.id])
+      .sort((a, b) => a.price - b.price);
+  }
+
+  fmtPhone(raw) {
+    const d = String(raw).replace(/\D/g, '').slice(0, 10);
+    if (d.length > 6) return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6);
+    if (d.length > 3) return '(' + d.slice(0, 3) + ') ' + d.slice(3);
+    if (d.length > 0) return '(' + d;
+    return '';
+  }
+
+  renderVals() {
+    const s = this.state;
+    const placement = this.props.notifyPlacement || 'Sidebar, below price breakdown';
+    const vis = this.visible();
+    const lowest = vis.length ? Math.min.apply(null, vis.map(q => q.price)) : 0;
+    const tabBase = 'background:transparent; border:0; cursor:pointer; padding:0 0 14px; display:flex; align-items:center; gap:8px; font:700 16px/22px var(--font-sans); text-transform:uppercase; letter-spacing:.04em;';
+    const tabOn = tabBase + ' color:var(--blue-700); box-shadow:inset 0 -3px 0 var(--blue-600);';
+    const tabOff = tabBase + ' color:var(--gray-800);';
+    const dot = on => 'width:' + (on ? 10 : 8) + 'px; height:' + (on ? 10 : 8) + 'px; border-radius:50%; background:' + (on ? 'var(--blue-600)' : 'var(--gray-400)') + '; display:block; box-shadow:0 0 0 1px rgba(0,0,0,.12);';
+
+    const subBase = 'background:transparent; border:0; cursor:pointer; padding:0 0 10px; display:flex; align-items:center; gap:8px; font:700 15px/21px var(--font-sans); text-transform:uppercase; letter-spacing:.04em;';
+    const subOn = subBase + ' color:var(--blue-700); box-shadow:inset 0 -3px 0 var(--blue-600);';
+    const subOff = subBase + ' color:var(--gray-800);';
+
+    const quotes = vis.map(q => {
+      const expanded = !!s.expanded[q.id];
+      const sub = s.subTab[q.id] || 'details';
+      const isAccepted = s.accepted === q.id;
+      const isNew = false;
+      return {
+        id: q.id, name: q.name, initials: q.initials, city: q.city, rating: q.rating,
+        reviews: q.reviews.toLocaleString(), service: q.service, pickup: q.pickup, delivery: q.delivery,
+        priceStr: q.price.toLocaleString(), feedback: q.feedback.toLocaleString(), positive: q.positive, cancel: q.cancel,
+        equipment: q.equipment, transit: q.transit, expires: q.expires, included: q.included, note: q.note,
+        quoteId: q.quoteId, placed: q.placed, expiresFull: q.expiresFull,
+        pickupEst: q.pickupEst, deliveryEst: q.deliveryEst, terms: q.terms, payment: q.payment, vehicle: q.vehicle,
+        feeStr: FEE.toLocaleString(), totalStr: (q.price + FEE).toLocaleString(),
+        termsLabel: 'View ' + q.name + ' Terms & Conditions',
+        subDetails: sub === 'details', subQuestions: sub === 'questions',
+        subDetailsStyle: sub === 'details' ? subOn : subOff,
+        subQuestionsStyle: sub === 'questions' ? subOn : subOff,
+        onSubDetails: () => this.setState(st => ({ subTab: Object.assign({}, st.subTab, { [q.id]: 'details' }) })),
+        onSubQuestions: () => this.setState(st => ({ subTab: Object.assign({}, st.subTab, { [q.id]: 'questions' }) })),
+        question: q.question, questionTime: q.questionTime,
+        hasQuestion: !!q.question, noQuestions: !q.question, questionCount: q.question ? 1 : 0,
+        isNew, isAccepted, showActions: !isAccepted, expanded,
+        toggleLabel: expanded ? 'Hide Quote Details' : 'Show Quote Details',
+        chevronStyle: 'transition:transform 160ms cubic-bezier(0.2,0,0,1);' + (expanded ? ' transform:rotate(180deg);' : ''),
+        cardStyle: 'overflow:hidden;' + (isAccepted ? ' border-color:var(--green-700); box-shadow:0 0 0 1px var(--green-700);' : isNew ? ' border-color:var(--orange-500); animation:rowIn 240ms cubic-bezier(0.2,0,0,1);' : ''),
+        onToggle: () => this.setState(st => ({ expanded: Object.assign({}, st.expanded, { [q.id]: !st.expanded[q.id] }) })),
+        onAccept: () => this.setState({ confirming: q.id }),
+        onDecline: () => this.setState(st => ({ declined: Object.assign({}, st.declined, { [q.id]: true }) }))
+      };
+    });
+
+    const confirmQuote = ALL_QUOTES.filter(q => q.id === s.confirming)[0];
+    const threads = s.threads.map(t => ({
+      id: t.id, author: t.author, initials: t.initials, role: t.role, time: t.time, body: t.body,
+      replies: t.replies, replyOpen: t.replyOpen, replyClosed: !t.replyOpen, replyText: t.replyText,
+      onOpenReply: () => this.setThread(t.id, { replyOpen: true }),
+      onCancelReply: () => this.setThread(t.id, { replyOpen: false, replyText: '' }),
+      onReplyChange: e => this.setThread(t.id, { replyText: e.target.value }),
+      onSend: () => {
+        const text = (t.replyText || '').trim();
+        if (!text) return;
+        this.setState(st => ({
+          threads: st.threads.map(x => x.id === t.id
+            ? Object.assign({}, x, { replyOpen: false, replyText: '', replies: x.replies.concat({ author: 'Todd Whitefield', time: 'Just now', body: text }) })
+            : x)
+        }));
+      }
+    }));
+
+    return {
+      isListing: s.screen === 'listing', isTaskScreen: s.screen === 'task',
+      nextTaskLabel: s.screen === 'listing' ? 'Next Task' : 'Back to Listing',
+      onNextTask: e => { if (e) e.preventDefault(); this.setState(st => ({ screen: st.screen === 'listing' ? 'task' : 'listing' })); window.scrollTo(0, 0); },
+      isSummary: s.tab === 'summary', isQuotes: s.tab === 'quotes', isQuestions: s.tab === 'questions',
+      tabSummaryStyle: s.tab === 'summary' ? tabOn : tabOff,
+      tabQuotesStyle: s.tab === 'quotes' ? tabOn : tabOff,
+      tabQuestionsStyle: s.tab === 'questions' ? tabOn : tabOff,
+      onTabSummary: e => { if (e) e.preventDefault(); this.setState({ tab: 'summary' }); },
+      onTabQuotes: e => { if (e) e.preventDefault(); this.setState({ tab: 'quotes' }); },
+      onTabQuestions: e => { if (e) e.preventDefault(); this.setState({ tab: 'questions' }); },
+
+      quotes, quoteCount: vis.length, questionCount: s.threads.length,
+      items: [
+        { name: 'Chaise section', dims: '68 × 38 × 34 in', weight: '95 lbs' },
+        { name: 'Armless center', dims: '34 × 38 × 34 in', weight: '55 lbs' },
+        { name: 'Loveseat section', dims: '62 × 38 × 34 in', weight: '60 lbs' }
+      ],
+      lowestQuote: lowest ? lowest.toLocaleString() : '—',
+      fee: FEE, total: lowest ? (lowest + FEE).toLocaleString() : '—',
+      timeLeft: '3 days, 6 hours', watching: s.watching,
+
+      detailsOpen: s.detailsOpen,
+      detailsChevronStyle: 'transition:transform 160ms cubic-bezier(0.2,0,0,1);' + (s.detailsOpen ? ' transform:rotate(180deg);' : ''),
+      onToggleDetails: () => this.setState(st => ({ detailsOpen: !st.detailsOpen })),
+
+      photo1: s.photo === 0, photo2: s.photo === 1, photo3: s.photo === 2,
+      dot1Style: dot(s.photo === 0), dot2Style: dot(s.photo === 1), dot3Style: dot(s.photo === 2),
+      onPrevPhoto: () => this.setState(st => ({ photo: (st.photo + 2) % 3 })),
+      onNextPhoto: () => this.setState(st => ({ photo: (st.photo + 1) % 3 })),
+
+      notifyAtTop: placement.indexOf('top') > -1,
+      notifyBelowPrice: placement.indexOf('below') > -1,
+      notifyInMain: placement.indexOf('Main') > -1,
+      notifySaved: !!s.savedPhone, notifyOpen: !s.savedPhone, savedPhone: s.savedPhone,
+      phone: s.phone,
+      phoneHelper: s.phoneError || 'Message frequency varies. Reply STOP to opt out. Standard rates may apply.',
+      compactHelper: s.phoneError || (s.savedPhone ? 'One text per new quote. Reply STOP to opt out.' : "We'll text you when a carrier quotes this shipment — nothing else. Reply STOP to opt out."),
+      phoneHelperStyle: 'margin-top:8px; font:400 12px/17px var(--font-sans); color:' + (s.phoneError ? 'var(--feedback-error)' : 'var(--gray-700)') + ';',
+      onPhoneChange: e => this.setState({ phone: this.fmtPhone(e.target.value), phoneError: '' }),
+      onNotifySubmit: () => {
+        const digits = s.phone.replace(/\D/g, '');
+        if (digits.length !== 10) { this.setState({ phoneError: 'Enter a 10-digit US mobile number, area code first.' }); return; }
+        this.setState({ savedPhone: s.phone, phoneError: '' });
+      },
+      onChangeNumber: e => { if (e) e.preventDefault(); this.setState({ savedPhone: '', phone: '' }); },
+
+      threads,
+
+      toastOpen: !!s.toast,
+      toastTitle: s.toast ? s.toast.title : '',
+      toastBody: s.toast ? s.toast.body : '',
+      onToastClose: () => this.setState({ toast: null }),
+      onToastAction: () => this.setState({ toast: null, tab: 'quotes' }),
+
+      confirmOpen: !!confirmQuote,
+      confirmBody: confirmQuote
+        ? confirmQuote.name + ' will move your sectional for $' + confirmQuote.price.toLocaleString() + ', plus a $' + FEE + ' uShip fee. You have 24 hours to book and pay once you accept.'
+        : '',
+      onCancelConfirm: () => this.setState({ confirming: null }),
+      onConfirmAccept: () => this.setState(st => ({ accepted: st.confirming, confirming: null }))
+    };
+  }
+
+  setThread(id, patch) {
+    this.setState(st => ({ threads: st.threads.map(t => t.id === id ? Object.assign({}, t, patch) : t) }));
+  }
+}
+</script>
+</body>
+</html>

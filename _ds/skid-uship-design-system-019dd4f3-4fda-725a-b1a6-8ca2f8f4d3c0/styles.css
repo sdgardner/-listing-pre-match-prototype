@@ -1,0 +1,12 @@
+/* ============================================================
+   Skid · uShip Design System — GLOBAL ENTRY
+   Single import root for the whole system. Pulls in, in order:
+     1. colors_and_type.css — @font-face (Lato) + type utilities,
+        which itself @imports tokens.css (primitives + semantic vars)
+     2. components.css       — buttons, badges, inputs, cards, etc.
+   Keeping one entry file ensures the Lato @font-face rules and the
+   --font-sans token resolve inside the same stylesheet closure.
+   ============================================================ */
+
+@import url("colors_and_type.css");
+@import url("components.css");
