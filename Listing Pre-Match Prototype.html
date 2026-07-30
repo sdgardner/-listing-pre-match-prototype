@@ -128,24 +128,28 @@
         </sc-if>
 
         <div style="display:grid; grid-template-columns:minmax(0,1fr) 420px; gap:24px; align-items:stretch">
-          <div class="skid-card" style="padding:24px; display:flex; flex-direction:column">
-            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-              <h2 style="font:700 20px/26px var(--font-sans); color:var(--gray-900); margin:0">Your listing is live</h2>
+          <div class="skid-card" style="padding:24px; display:flex; flex-direction:column; justify-content:center; gap:20px">
+            <div>
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                <h2 style="font:700 20px/26px var(--font-sans); color:var(--gray-900); margin:0">Your listing is live</h2>
+              </div>
+              <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:0 0 4px">Carriers are reviewing your shipment now. Your target price is <strong>$1,100</strong>.</p>
+              <p style="font:400 14px/22px var(--font-sans); color:var(--gray-700); margin:0; max-width:52ch; text-wrap:pretty">Most sectional sofas on this lane get their first quote within a few hours. You have 24 hours to book once you accept a quote.</p>
             </div>
-            <p style="font:400 16px/24px var(--font-sans); color:var(--gray-800); margin:0 0 4px">Carriers are reviewing your shipment now. Your target price is <strong>$1,100</strong>.</p>
-            <p style="font:400 14px/22px var(--font-sans); color:var(--gray-700); margin:0 0 20px; max-width:52ch; text-wrap:pretty">Most sectional sofas on this lane get their first quote within a few hours. You have 24 hours to book once you accept a quote.</p>
-            <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; margin-top:auto">Next steps</div>
-            <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
-              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                <span>Answer <a href="#" onClick="{{ onTabQuestions }}" style="font-weight:700">2 questions</a> from carriers.</span>
-              </li>
-              <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
-                <span>Add <a href="#" style="font-weight:700">street addresses</a> for pickup and delivery.</span>
-              </li>
-            </ul>
+            <div>
+              <div class="skid-label" style="text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px">Next steps</div>
+              <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px">
+                <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                  <span>Answer <a href="#" onClick="{{ onTabQuestions }}" style="font-weight:700">2 questions</a> from carriers.</span>
+                </li>
+                <li style="display:flex; gap:10px; align-items:flex-start; font:400 16px/22px var(--font-sans); color:var(--gray-800)">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-600)" stroke-width="1.8" stroke-linecap="round" style="flex-shrink:0; margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                  <span>Add <a href="#" style="font-weight:700">street addresses</a> for pickup and delivery.</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="skid-card" style="padding:20px; display:flex; flex-direction:column">
